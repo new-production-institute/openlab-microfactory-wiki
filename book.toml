@@ -1,0 +1,12 @@
+[book]
+authors = ["J.C. Mariscal-Melgar", "Juan Grados"]
+language = "en"
+multilingual = false
+src = "src"
+title = "OpenLab Microfactory Wiki"
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "dark"
+
+
+
