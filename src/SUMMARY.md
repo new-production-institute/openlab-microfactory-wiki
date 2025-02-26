@@ -1,8 +1,8 @@
 # Contents
 
 - [Welcome](./welcome.md)
-- [Installation Guide](./installation.md)
-- [Services Instrucitons](./general_instructions.md)
-- [InfluxDB Instructions](./influxdb_instructions.md)
-- [NodeRed Instructions](./nodered_instructions.md)
-- [Graphana Instructions](./graphana_instructions.md)
+- [Installation guide](./installation.md)
+- [Interacting with the stack](./general_instructions.md)
+- [InfluxDB instructions](./influxdb_instructions.md)
+- [NodeRed instructions](./nodered_instructions.md)
+- [Graphana instructions](./graphana_instructions.md)
