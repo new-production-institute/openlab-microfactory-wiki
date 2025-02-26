@@ -12,7 +12,7 @@ The easiest way to setup a new SD card with Raspberry Pi OS is with the official
 
 **Option 2: Mini PC as Server**  
 
-For this option I would recommend to install [Proxmox](https://www.proxmox.com/en/downloads) as Operating System.  
+For this option I would recommend to install [Proxmox](https://www.proxmox.com/en/downloads "Proxmox.com") as Operating System.  
 
 Proxmox is a open-source server management platform. With it, its possible to deploy and manage multiple Virtual Machines (VM) and Linux Containers (LXC) in a easy and uncumplicated way.
 
