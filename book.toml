@@ -6,8 +6,7 @@ src = "src"
 title = "OpenLab Microfactory Wiki"
 [output.html]
 default-theme = "light"
-preferred-dark-theme = "dark"
-smart-punctuation = false
+smart-punctuation = true
 git-repository-url = "https://github.com/new-production-institute/openlab-microfactory-wiki"
 edit-url-template = "https://github.com/new-production-institute/openlab-microfactory-wiki/edit/main/{path}"
 
