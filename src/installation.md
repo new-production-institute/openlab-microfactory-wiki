@@ -65,6 +65,18 @@ save and restart your device
 sudo reboot
 ```
 
+after rebooting go egain to the console of your server and veryfy that the hostname is correct by typing
+
+```
+hostnamectl
+```
+
+the first line should be
+
+```
+Static hostname: rms
+```
+
 
 ## Installing and running the Resource Monitoring Template
 
