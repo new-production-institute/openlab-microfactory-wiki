@@ -10,15 +10,19 @@ Operating System: Raspberry Pi OS Lite (64-bit)
 
 The easiest way to setup a new SD card with Raspberry Pi OS is with the official [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 
-**Option 2: Mini PC as Server**  
+When selecting the Operating System in the Raspberry Pi Imager, select the 64 bit Lite version (without Graphical User Interface).
+
+**Option 2: Dedicated PC**  
+
+Second hand mini pc's are a great option for this applicaiton.
 
 For this option I would recommend to install [Proxmox](https://www.proxmox.com/en/downloads "Proxmox.com") as Operating System.  
 
-Proxmox is a open-source server management platform. With it, its possible to deploy and manage multiple Virtual Machines (VM) and Linux Containers (LXC) in a easy and uncumplicated way.
+Proxmox is a open-source server management platform. Proxmox allows to deploy and manage multiple Virtual Machines (VM) and Linux Containers (LXC) in a easy and uncumplicated way.
 
 [Here](https://phoenixnap.com/kb/install-proxmox) you can find a step-by-step guide if needed.
 
-To deploy an Debian VM I would recommend to use the [**VE Helper-Scripts**](https://tteck.github.io/Proxmox/#debian-12-vm).
+The easiest way to deploy a Debian VM is with the help of these community scripts: [**VE Helper-Scripts**](https://tteck.github.io/Proxmox/#debian-12-vm).
 
 However, if you already have your own server running this is not necessary and you can deploy the resoruce monitoring system in your current setup.
 
@@ -32,7 +36,7 @@ However, if you already have your own server running this is not necessary and y
 
 [Official documentation](https://docs.docker.com/engine/install/ubuntu/)
 
-**Option 2: IoTStack installation (recommended)**
+**Option 2: IoTStack installation**
 
 [IoTStack](https://sensorsiot.github.io/IOTstack/) is a builder for docker-compose files. It also takes care that Docker and Docker Compose are installed in the system and configured correctly.
 
@@ -73,21 +77,24 @@ cd IOTStack
 Follow the menu to create your stack.
 For the resoruce monitoring system it is necessary to select:
 
-* NodeRed
+* Node-Red
 * Mosquitto
 * InlfuxDB2 (IMPORTAT: Make sure to select **InfluxDB2** and NOT InfluxDB)
 * Grafana
 * (Optional) Home Assistant
 
-Feel free to add other applicaitons/services that you might need.
+Feel free to add other applicaitons/services of your choise.
 
 The output of the IOTStack builder will be a docker-compose.yml file with the services you selected.
 
 
 2. Copy the templates
 
-We provide ready-to-use templates for collecting data from Shelly smart energy plugs, newer Prusa printters (PrusaMini, MK4, Core One, Prusa XL)
-as well as data aggregation flows and a sample Graphana dashboard.
+We provide ready-to-use templates for:
+* collect data from Shelly smart energy plugs
+* collect data from PrusaLink (PrusaMini, MK4, Core One, Prusa XL)
+* data aggregation flows
+* graphana dashboard
 
 Copy the templates from HERE to your **\IOTStack** directory.
 
