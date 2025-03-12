@@ -43,7 +43,30 @@ However, if you already have your own server running this is not necessary and y
 In the past I have used the [add-on method](https://sensorsiot.github.io/IOTstack/Basic_setup/#addonInstall) successfully, but feel free to use the PiBuilder method if you prefer.
 
 
-## Using the Resource Monitoring Template
+### Assigning a hostname
+
+For the provided templates to work, it is necessary to assign the correct hostname to your server.
+In Debian based systems, it is possible to manually assign the hostname by editing the file `/etc/hostname`.
+Open the file in your editor of choise, for example:
+
+```
+vim /etc/hostname
+```
+
+delete the existing name and reaplace it with:
+
+```
+rms
+```
+
+save and restart your device
+
+```
+sudo reboot
+```
+
+
+## Installing and running the Resource Monitoring Template
 
 1.  Create a directory for the Resoruce Monitoring System, e.g.:
 
