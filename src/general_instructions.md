@@ -66,6 +66,24 @@ In the "InfluxDB Server" configuration:
 
 ### Grafana configuration
 
+Finally, the last required configuration is for connecting Grafana to the InfluxDB database to retrieve the data for the dashboard.
+
+* Open Grafana http://rms:3000
+* Default creadentials are `admin/admin`. After first login you will me prompted to change your password.
+* On the left panel click on the arrow to open the menu under "Connections".
+* Click on "Data sources"
+* On the top-right click on "+ Add new data source".
+
+In the new panel fill the following fields:
+
+* Name: rms influxdb
+* Query language: Flux
+* URL: http://rms:8087
+* Organization: myorg
+* Token: Paste the token generated earlier for InlfuxDB
+* Default Bucket: rms_bucket
+
+The rest of the fields stay as they are.
 
 
 ## Interacting with the services
