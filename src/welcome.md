@@ -18,12 +18,10 @@ The stack is deployed and orchestrated via docker compose.
 
 ## Current status
 
-The current version of the RMS monitors energy consumption and machine utilisation.
-Energy consumtion is tracked per machine using off-the=shelf smart plugs, and for Prusa printers it also tracks energy consumption per job.
+The current version of the RMS monitors energy consumption and machine utilisation.  
+Energy tracking is done with off-the-shelf smart plugs, while job data for Prusa 3D printers is tracked using the [PrusaLink API](https://help.prusa3d.com/article/prusa-connect-and-prusalink-explained_302608).
 
-Energy tracking is done with off-the-shelf smart plugs, while job data for Prusa 3D printers is tracked using the PrusaLink API.
-
-## The future
+## Outlook
 
 In the future additional resource flows might be inlcuded, such as material flows, energy sources (own photovoltaic electricity generation vs grid), etc.
 
