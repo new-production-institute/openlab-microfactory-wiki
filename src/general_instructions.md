@@ -10,8 +10,9 @@ With the system up and running we still have to configure some aspects to make i
 ### InfluxDB configuration
 
 **Setup an InfluxDB2 Bucket**
+
 1. Access the InfluxDB UI
-   Open your browser and navigate to your InfluxDB2 instance: `http://rms:8086`
+   Open your browser and navigate to your InfluxDB2 instance: http://rms:8086
 2. Log in to InfluxDB
    Enter the creadentials. By default in the docker-compose.yml example file, the InfluxDB credentials are:
 
@@ -35,7 +36,8 @@ With the system up and running we still have to configure some aspects to make i
    * Click "Create".
 
 
-**Create Access Token**
+**Create Access Token**  
+
 Now we need to create an access token for the buckets.
 
 * Go to "Load Data" > "API Tokens" in the left panel.
@@ -47,6 +49,20 @@ Now we need to create an access token for the buckets.
 Copy and save the token securely—you’ll need it for Node-Red.
 
 ### Node-red configuration
+
+**Connect Node-Red to InfluxDB**
+
+* Open Node-Red http://rms:1880.
+* At the top select the tab named "shellyplug-sensors-integration".
+* At the right side of all the flow there is a node called "InfluxDB2".
+* Double-click the node and click the pencil icon next to "Server".
+  
+In the "InfluxDB Server" configuration:  
+* Host: http://rms:8086
+* Organization: myorg
+* Token: Paste the token generated earlier
+* Version: Select InfluxDB 2.0
+* Click Update
 
 ### Grafana configuration
 
