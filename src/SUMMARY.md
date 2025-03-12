@@ -2,7 +2,6 @@
 
 - [Welcome](./welcome.md)
 - [Installation guide](./installation.md)
-- [Interacting with the stack](./general_instructions.md)
-- [InfluxDB instructions](./influxdb_instructions.md)
-- [NodeRed instructions](./nodered_instructions.md)
-- [Graphana instructions](./graphana_instructions.md)
+- [RSM configuration](./general_instructions.md)
+- [Node-Red template](./nodered_instructions.md)
+- [Graphana template](./graphana_instructions.md)
