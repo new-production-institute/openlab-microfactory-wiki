@@ -2,22 +2,55 @@
 
 This guide assumes that you have successfully completed the instrucction in the [installation guide](installation.md).
 
-Now that the system is up, let's interact with the different services.
+With the system up and running we still have to configure some aspects to make it work.
 
 
-## Prerequisites
+## Configurations
 
-**Local ip address of the server**  
+### InfluxDB configuration
 
-Most probably you already know the ip address of the server, but if that is not the case, 
-and you still have access to a terminal window of your server, 
-it is possible to get the local ip address running the following command:
+**Setup an InfluxDB2 Bucket**
+1. Access the InfluxDB UI
+   Open your browser and navigate to your InfluxDB2 instance: `http://rms:8086`
+2. Log in to InfluxDB
+   Enter the creadentials. By default in the docker-compose.yml example file, the InfluxDB credentials are:
 
-`ipconfig getifaddr en0`
+   ```
+   user: me
+   password: mypassword
+   ```
+   You can always change them in the docker-compose.yml file.
+   
+3. Create a the new Buckets we need
+   
+   Repeat the steps below two times, one for bucket name `rms_bucket` and one more time for bucket name `rms_bucket_long`.
 
-**InfluxDB setup**
+   For bucket `rms_bucket` use retention period of 7 days.  
+   For bucket `rms_bucket_long` use retention period of forever.
+   
+   * Go to "Load Data" > "Buckets" in the left panel.
+   * Click "Create Bucket".
+   * Provide a Bucket name.
+   * Set the Retention Period.
+   * Click "Create".
 
-One-time setup of the database is required: [influxdb_instructions.md](influxdb_instructions.md)
+
+**Create Access Token**
+Now we need to create an access token for the buckets.
+
+* Go to "Load Data" > "API Tokens" in the left panel.
+* Click "Generate API Token" > "Custom API Token".
+* Give a meaningful name, e.g. "Node-Red Token"
+* Select "Read" and "Write" for the newly created buckets (`rms_bucket`, `rms_bucket_long`).
+* Click "Generate".
+  
+Copy and save the token securely—you’ll need it for Node-Red.
+
+### Node-red configuration
+
+### Grafana configuration
+
+
 
 ## Interacting with the services
 
