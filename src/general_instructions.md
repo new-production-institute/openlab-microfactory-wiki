@@ -1,13 +1,12 @@
-# How to interact with the Resource Monitoring System
+# Configuration of the Resource Monitoring System
 
-This guide assumes that you have successfully completed the instrucction in the [installation guide](installation.md).
+The two main services from the user's perspective are NodeRed and Grafana.  
+The other two services, InfluxDB and Mosquitto, are there to store and transmit the data between sensors and services.
 
-With the system up and running we still have to configure some aspects to make it work.
+This guide assumes that you have successfully completed the instrucction in the [installation guide](installation.md).  
+With the system up we still have to configure some aspects to make it work.
 
-
-## Configurations
-
-### InfluxDB configuration
+## InfluxDB configuration
 
 **Setup an InfluxDB2 Bucket**
 
@@ -48,7 +47,7 @@ Now we need to create an access token for the buckets.
   
 Copy and save the token securely—you’ll need it for Node-Red.
 
-### Node-red configuration
+## Node-red configuration
 
 **Connect Node-Red to InfluxDB**
 
@@ -64,7 +63,7 @@ In the "InfluxDB Server" configuration:
 * Version: Select InfluxDB 2.0
 * Click Update
 
-### Grafana configuration
+## Grafana configuration
 
 Finally, the last required configuration is for connecting Grafana to the InfluxDB database to retrieve the data for the dashboard.
 
@@ -85,30 +84,24 @@ In the new panel fill the following fields:
 
 The rest of the fields stay as they are.
 
+---
 
-## Interacting with the services
+## Understanding the services
 
-The two main services that you will use are NodeRed and Grafana.
-The other two services, InfluxDB and Mosquitto are there to store the data and transmit the data between sensors and services.
 
-### NodeRed
+### Node-Red
 
-[NodeRed](https://nodered.org) is an open-source low-code programming enviroment for real-time data manipulation.
+[Node-Red](https://nodered.org) is an open-source low-code programming enviroment for real-time data manipulation.
 
-NodeRed is being exposed in port 1880, therefore, in your browser go to:  
-**< server-ip-address >:1880**
-
-In the installed template there are some examples on how to get sensor data, calculate new values from them, 
+In the installed template, there are some examples on how to get sensor data, calculate new values from them, 
 and store them in the Influx database.
 
-[nodered_instructions.md](nodered_instructions.md) provides more detailed explanations on how to use the templates and how to modify them for your own needs.
+[Node-Red template](nodered_instructions.md) provides more detailed explanations on how to use the templates and how to modify them for your own needs.
 
 ### Grafana
 
 [Grafana](https://grafana.com/oss/grafana/) is an open-source software for creating interactive dashboards.
 
-Grafana is being exposed in port 3000, therefore, in your browser go to:  
-**< server-ip-address >:3000**
 
-[grafana_instructions.md](grafana_instructions.md) provides more detailed explanations for how to use the templates and how to modify them for your own needs.
+[Grafana template](grafana_instructions.md) provides more detailed explanations for how to use the templates and how to modify them for your own needs.
 
