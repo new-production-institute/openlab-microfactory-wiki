@@ -14,17 +14,17 @@ When selecting the Operating System in the Raspberry Pi Imager, select the 64 bi
 
 **Option 2: Dedicated PC**  
 
-Second hand mini pc's are a great option for this applicaiton.
+Second-hand mini pc's are a great option for this applicaiton.
 
-For this option I would recommend to install [Proxmox](https://www.proxmox.com/en/downloads "Proxmox.com") as Operating System.  
+When using a pc, I would recommend to install [Proxmox](https://www.proxmox.com/en/downloads "Proxmox.com") as Operating System.  
 
-Proxmox is a open-source server management platform. Proxmox allows to deploy and manage multiple Virtual Machines (VM) and Linux Containers (LXC) in a easy and uncumplicated way.
+Proxmox is a open-source server management platform. Proxmox makes it very easy to deploy and manage multiple Virtual Machines (VM) and Linux Containers (LXC).
 
-[Here](https://phoenixnap.com/kb/install-proxmox) you can find a step-by-step guide if needed.
+[Here](https://phoenixnap.com/kb/install-proxmox) you can find a step-by-step guide to install Proxmox as your operating system.
 
 The easiest way to deploy a Debian VM is with the help of these community scripts: [**VE Helper-Scripts**](https://tteck.github.io/Proxmox/#debian-12-vm).
 
-However, if you already have your own server running this is not necessary and you can deploy the resoruce monitoring system in your current setup.
+However, if you already have your own server running, this is not necessary and you can deploy the resoruce monitoring system in your current setup.
 
 
 
@@ -45,7 +45,7 @@ In the past I have used the [add-on method](https://sensorsiot.github.io/IOTstac
 
 ### Assigning a hostname
 
-For the provided templates to work, it is necessary to assign the correct hostname to your server.
+For the RMS template to work it is necessary to assign the correct hostname to your server.
 In Debian based systems, it is possible to manually assign the hostname by editing the file `/etc/hostname`.
 Open the file in your editor of choise, for example:
 
