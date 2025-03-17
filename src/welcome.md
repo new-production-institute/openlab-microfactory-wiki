@@ -11,7 +11,7 @@ The stack consists of:
 * **Mosquitto MQTT Broker** as communication layer.  
 * **Node-Red** as agreggation and data manipulation layer.
 * **Timeseries database InfluxDB2** as storage layer.
-* **Graphana** as dashboard layer.
+* **Graphana** as visualization layer.
 * (Optional) **Home Assistant** as control layer and/or alternative dashboard.
   
 The stack is deployed and orchestrated via docker compose.
