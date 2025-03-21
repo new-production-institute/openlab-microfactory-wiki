@@ -1,10 +1,10 @@
 # Resource Monitoring System
 
-## Introduciton 
+## Introduction 
 
 This wiki contains a step-by-step guide for setting up a Resource Monitoring System (RMS) for Microfactories and small workshops.
 
-An RMS is a software stack based on open-soruce solutions to collect, aggregate, monitor, and control machines and resource utilisation in a Microfactory.
+An RMS is a software stack based on open-source solutions to collect, aggregate, monitor, and control machines and resource utilisation in a Microfactory.
 
 The stack consists of:
 
@@ -23,5 +23,5 @@ Energy tracking is done with off-the-shelf smart plugs, while job data for Prusa
 
 ## Outlook
 
-In the future additional resource flows might be inlcuded, such as material flows, energy sources (own photovoltaic electricity generation vs grid), etc.
+In the future additional resource flows might be included, such as material flows, energy sources (own photovoltaic electricity generation vs grid), etc.
 
