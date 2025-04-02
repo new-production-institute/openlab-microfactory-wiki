@@ -88,7 +88,95 @@ cd resource_monitoring
 
 ```
 
-2. Copy the content of the **\template** folder of this repository in the folder that you just created.
+2. Copy the **template** below into the folder that you just created.
+
+```
+networks:
+  default:
+    driver: bridge
+
+services:
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    restart: unless-stopped
+    user: "0"
+    ports:
+    - "3000:3000"
+    environment:
+    - TZ=Etc/UTC
+    - GF_PATHS_DATA=/var/lib/grafana
+    - GF_PATHS_LOGS=/var/log/grafana
+    volumes:
+    - ./volumes/grafana/data:/var/lib/grafana
+    - ./volumes/grafana/log:/var/log/grafana
+    healthcheck:
+      test: ["CMD", "wget", "-O", "/dev/null", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  influxdb2:
+    container_name: influxdb2
+    image: "influxdb:latest"
+    restart: unless-stopped
+    environment:
+    - TZ=Etc/UTC
+    - DOCKER_INFLUXDB_INIT_USERNAME=me
+    - DOCKER_INFLUXDB_INIT_PASSWORD=mypassword
+    - DOCKER_INFLUXDB_INIT_ORG=myorg
+    - DOCKER_INFLUXDB_INIT_BUCKET=mybucket
+    - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token
+    - DOCKER_INFLUXDB_INIT_MODE=setup
+    ports:
+    - "8087:8086"
+    volumes:
+    - ./volumes/influxdb2/data:/var/lib/influxdb2
+    - ./volumes/influxdb2/config:/etc/influxdb2
+    - ./volumes/influxdb2/backup:/var/lib/backup
+    healthcheck:
+      test: ["CMD", "influx", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  mosquitto:
+    container_name: mosquitto
+    build:
+      context: ./.templates/mosquitto/.
+      args:
+      - MOSQUITTO_BASE=eclipse-mosquitto:latest
+    restart: unless-stopped
+    environment:
+    - TZ=${TZ:-Etc/UTC}
+    ports:
+    - "1883:1883"
+    volumes:
+    - ./volumes/mosquitto/config:/mosquitto/config
+    - ./volumes/mosquitto/data:/mosquitto/data
+    - ./volumes/mosquitto/log:/mosquitto/log
+    - ./volumes/mosquitto/pwfile:/mosquitto/pwfile
+
+  nodered:
+    container_name: nodered
+    build:
+      context: ./services/nodered/.
+      args:
+      - DOCKERHUB_TAG=latest
+      - EXTRA_PACKAGES=
+    restart: unless-stopped
+    user: "0"
+    environment:
+    - TZ=${TZ:-Etc/UTC}
+    ports:
+    - "1880:1880"
+    volumes:
+    - ./volumes/nodered/data:/data
+    - ./volumes/nodered/ssh:/root/.ssh
+```
 
 
 3. Start Docker Compose
