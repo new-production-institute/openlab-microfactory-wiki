@@ -88,7 +88,11 @@ cd resource_monitoring
 
 ```
 
-2. Copy the **template** below into the folder that you just created.
+2. Create a file inside the directory:
+
+`touch docker-compose.yml`
+
+3. Copy the **template** below into the file that you just created.
 
 ```
 networks:
@@ -179,7 +183,7 @@ services:
 ```
 
 
-3. Start Docker Compose
+4. Start Docker Compose
 
 ```
 docker-compose up -d
