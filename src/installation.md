@@ -163,11 +163,7 @@ services:
 
   nodered:
     container_name: nodered
-    build:
-      context: ./services/nodered/.
-      args:
-      - DOCKERHUB_TAG=latest
-      - EXTRA_PACKAGES=
+    image: nodered/node-red:latest
     restart: unless-stopped
     user: "0"
     environment:
