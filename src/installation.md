@@ -149,10 +149,7 @@ services:
 
   mosquitto:
     container_name: mosquitto
-    build:
-      context: ./.templates/mosquitto/.
-      args:
-      - MOSQUITTO_BASE=eclipse-mosquitto:latest
+    image: eclipse-mosquitto:latest
     restart: unless-stopped
     environment:
     - TZ=${TZ:-Etc/UTC}
